@@ -17,7 +17,7 @@
       <div class="carousel">
           {% for image in category.get_album.get_images %}
 {#        <div class="slide active" style="background-image: url({{ category.get_album.get_images.first.url }});"></div>#}
-        <div class="slide" style="background-image: url({{ image.photo }});"></div>
+        <div class="slide" style="background-image: url({{ image.image.url }});"></div>
         <div class="leftButton">
           <img src="{% static 'images/arrow_white.png' %}" alt="">
         </div>

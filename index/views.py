@@ -8,7 +8,7 @@ def render_index(request):
     third_section = Section.objects.get(order=3)
     fourth_section = Section.objects.get(order=4)
 
-    print(first_section.get_categories().first().get_album().get_images().first())
+    # print(first_section.get_categories().first().get_album().get_images().first().image.url)
 
     context = {
         'first_section': first_section,
