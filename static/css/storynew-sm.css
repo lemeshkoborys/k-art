@@ -1,0 +1,69 @@
+.story-sm {
+  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  background: #fafafa;
+  padding-bottom: 20px;
+}
+
+.story-sm-our, .story-sm-slogan, .story-sm-text {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.story-sm-our > h1, .story-sm-slogan > h3, .story-sm-text > p {
+  padding-left: 10px;
+  width: calc(100vw - 40px);
+}
+.story-sm-our {
+  animation: our 1.5s ease;
+}
+.story-sm-our h1 {
+  font-size: 6vh;
+  margin: 3.5vh 0 0 0;
+  color: #252525;
+  font-weight: 400;
+  text-shadow: 2px 2px 0.5vh #00000044;
+}
+@keyframes our {
+  0%   {width: 0;}
+  50%   {width: 0;}
+  100% {width: 100%;}
+}
+
+.story-sm-slogan {
+  animation: slogan 2s ease;
+}
+.story-sm-slogan h3 {
+  font-size: 3.5vh;
+  color: #252525;
+  font-weight: 400;
+  font-style: italic;
+  text-shadow: 1px 1px 0.3vh #00000044;
+}
+@keyframes slogan {
+  0%   {width: 0;}
+  50%   {width: 0;}
+  100% {width: 100%;}
+}
+
+.story-sm-text {
+  animation: text 2.5s ease;
+}
+.story-sm-text p {
+  font-size: 2.5vh;
+  line-height: 4.5vh;
+  padding-right: 2vw;
+  color: #333333;
+  font-weight: 330;
+  text-shadow: 1px 1px 0.2vh #00000044;
+}
+@keyframes text {
+  0%   {width: 0;}
+  50%   {width: 0;}
+  100% {width: 100%;}
+}
+
+@media (min-width: 992px) {
+  .story-sm {
+    display: none;
+  }
+}

@@ -1,0 +1,227 @@
+.tile:nth-child(1)::before {background-image: url('../images/fwd/digital_2.jpg')}
+.tile:nth-child(2)::before {background-image: url('../images/fwd/wide_1.jpg')}
+.tile:nth-child(3)::before {background-image: url('../images/fwd/outer_4.jpg')}
+.tile:nth-child(4)::before {background-image: url('../images/fwd/inter_1.jpg')}
+
+html, body, .story-outer, .story {
+  height: 100%;
+  margin: 0;
+}
+.header-main {
+  z-index: 2;
+  width: 49.9999%;
+  transition: all 0.5s ease;
+}
+.nav-main {
+  display: none;
+  opacity: 0;
+  margin-top: -50px;
+  animation-name: nav-back;
+  animation-duration: 0.5s;
+}
+@keyframes nav {
+  0%   {display: none; opacity: 0; margin-top: -50px;}
+  1%  {display: none; opacity: 0; margin-top: -50px;}
+  100% {display: block; opacity: 1; margin-top: 0;}
+}
+@keyframes nav-back {
+  0%   {display: block; opacity: 1; margin-top: 0;}
+  1%  {display: block; opacity: 1; margin-top: 0;}
+  100% {display: none; opacity: 0; margin-top: -50px;}
+}
+
+.body-gallery {
+  overflow-y: scroll;
+}
+.story-gallery {
+  margin-top: calc(100px - 100vh);
+}
+.header-gallery {
+  width: 100%;
+}
+.nav-gallery {
+  display: block;
+  margin-top: 0;
+  opacity: 1;
+  animation-name: nav;
+  animation-duration: 0.5s;
+}
+#gallery-button {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  z-index: 100;
+}
+
+.story-outer {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.story {
+  /* padding-top: 50px; */
+  /* box-sizing: border-box; */
+  width: 199.9999%; /* in order to have no 1px difference with next block */
+  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  background-color: #fafafa;
+  overflow-x: hidden;
+  /* overflow-y: hidden; */
+}
+
+.story-l, .story-r {
+  width: 25%;
+  height: 100%;
+  float: left;
+  line-height: 0;
+}
+.story-l, .story-r {
+  line-height: unset;
+}
+
+.story-l {
+  padding-top: 4%;
+  padding-left: 2%;
+  padding-right: 4%;
+  box-sizing: border-box;
+}
+
+.story-l-logo div {
+  font-size: 8.5vh;
+  font-family: London;
+  color: #8a8b8a;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 0.6vh #8a8b8a99;
+}
+
+.story-l-our, .story-l-slogan, .story-l-text {
+  width: 0;
+  padding-left: 10px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.story-l-our {
+  margin-top: 5vh;
+  width: 30vh;
+  animation: our 1.5s ease;
+}
+.story-l-our h1 {
+  width: 30vh;
+  margin: 0;
+  font-size: 6.5vh;
+  color: #252525;
+  font-weight: 400;
+  text-shadow: 2px 2px 0.5vh #00000044;
+}
+@keyframes our {
+  0%   {width: 0;}
+  50%   {width: 0;}
+  100% {width: 30vh;}
+}
+
+.story-l-slogan {
+  width: 38vw;
+  animation: slogan 2s ease;
+}
+.story-l-slogan h3 {
+  width: 38vw;
+  font-size: 3.5vh;
+  color: #252525;
+  font-weight: 400;
+  font-style: italic;
+  text-shadow: 1px 1px 0.3vh #00000044;
+}
+@keyframes slogan {
+  0%   {width: 0;}
+  50%   {width: 0;}
+  100% {width: 38vw;}
+}
+
+.story-l-text {
+  width: 38vw;
+  animation: text 2.5s ease;
+}
+.story-l-text p {
+  width: 38vw;
+  font-size: 2.5vh;
+  line-height: 4.5vh;
+  padding-right: 2vw;
+  color: #333333;
+  font-weight: 330;
+  text-shadow: 1px 1px 0.2vh #00000044;
+}
+@keyframes text {
+  0%   {width: 0;}
+  50%   {width: 0;}
+  100% {width: 38vw;}
+}
+
+.story-r {
+  background: #e4e4e4;
+}
+
+.tile {
+  position: relative;
+  width: 50%;
+  height: 50%;
+  float: left;
+}
+.tile::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.tile-card {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.tile-front {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  background-color: rgb(255, 255, 255, 0.8);
+  /* background-color: rgba(226,166,18,.7); */
+  opacity: 0;
+  transition-delay: 0.2s;
+  transition: all 0.4s ease;
+}
+.tile-front:hover {
+  opacity: 1;
+}
+.tile-front h4 {
+  width: 100%;
+  font-size: 2.5vh;
+  color: #252525;
+  margin: 0;
+  padding: 0 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+@media (max-width: 991px) {
+  .nav-main {
+    display: none;
+  }
+  .header-main {
+    width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  .story-outer {
+    display: none;
+  }
+}

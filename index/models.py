@@ -76,7 +76,7 @@ class Section(models.Model):
         blank=True
     )
 
-    def get_sections(self):
+    def get_categories(self):
         return Category.objects.filter(section=self)
 
     def __str__(self):

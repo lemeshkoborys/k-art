@@ -1,0 +1,52 @@
+.feedback-form {
+  padding: 16px 200px 16px 200px;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+.feedback-form h2 {
+  text-align: center;
+}
+.feedback-form input[type=text], input[type=email], select, textarea {
+  width: 100%;
+  padding: 8px 16px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc; 
+  box-sizing: border-box;
+
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 300;
+  line-height: 20px;
+
+  resize: none;
+}
+.feedback-form input[type=submit] {
+  width: 100%;
+  background-color: #252525;
+  color: white;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #000;
+  font-size: 14px;
+}
+.feedback-form input[type=submit]:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.feedback-form label {
+  font-weight: bolder;
+}
+
+@media (max-width: 539px) {
+  .feedback-form {
+    padding: 16px 16px 16px 16px;
+    border-top: none;
+  }
+}
+
+@media (min-width: 540px) and (max-width: 767px) {
+  .feedback-form {
+    padding: 16px 16px 16px 16px;
+  }
+}

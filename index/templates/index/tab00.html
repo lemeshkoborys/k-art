@@ -1,0 +1,195 @@
+{% load static %}<section id="tab00" class="items animate-opacity">
+<!-- 0 -->
+    {% for category in first_section.get_categories|dictsort:'id' %}
+<article id="item0{{ category.id|add:'-1' }}" class="item">
+  <div class="item-content">
+    <div class="item-info mid">
+      <div>
+        <h2 class="item-info-title">{{ category.title }}</h2>
+        <p class="item-info-description">
+          Многочисленные исследования по маркетингу показали,
+          что рекламный буклет – в лидерах по популярности,
+          а главное эффективности среди рекламных инструментов.
+        </p>
+      </div>
+    </div>
+    <div class="item-image">
+      <div class="carousel">
+          {% for image in category.get_album.get_images %}
+{#        <div class="slide active" style="background-image: url({{ category.get_album.get_images.first.url }});"></div>#}
+        <div class="slide" style="background-image: url({{ image.photo }});"></div>
+        <div class="leftButton">
+          <img src="{% static 'images/arrow_white.png' %}" alt="">
+        </div>
+        <div class="rightButton">
+          <img src="{% static 'images/arrow_white.png' %}" alt="">
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</article>
+    {% endfor %}
+<!-- 1 -->
+{#<article id="item01" class="item">#}
+{#  <div class="item-content">#}
+{#    <div class="item-image">#}
+{#      <div class="carousel">#}
+{#        <div class="slide active" style="background-image: url(./resources/images/brochure.jpg);"></div>#}
+{#        <div class="slide" style="background-image: url(./resources/images/catalogue.jpg);"></div>#}
+{#        <div class="slide" style="background-image: url(./resources/images/folder.jpg);"></div>#}
+{#        <div class="leftButton">#}
+{#          <img src="./resources/images/arrow_white.png" alt="">#}
+{#        </div>#}
+{#        <div class="rightButton">#}
+{#          <img src="./resources/images/arrow_white.png" alt="">#}
+{#        </div>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="item-info mid">#}
+{#      <div>#}
+{#        <h2 class="item-info-title">Каталоги</h2>#}
+{#        <p class="item-info-description">#}
+{#          Каталог можно считать идеальным решением для компаний,#}
+{#          ассортимент товаров и услуг которых постоянно пополняется.#}
+{#        </p>#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+{#</article>#}
+{#<!-- 2 -->#}
+{#<article id="item02" class="item">#}
+{#  <div class="item-content">#}
+{#    <div class="item-info mid">#}
+{#      <div>#}
+{#        <h2 class="item-info-title">Фирменные папки</h2>#}
+{#        <p class="item-info-description">#}
+{#          Печать папок с корпоративной символикой, например, логотипом –#}
+{#          это создание и постоянное поддерживание имиджа компании на рынке услуг.#}
+{#        </p>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="item-image">#}
+{#      <div class="carousel">#}
+{#        <div class="slide active" style="background-image: url(./resources/images/brochure.jpg);"></div>#}
+{#        <div class="slide" style="background-image: url(./resources/images/catalogue.jpg);"></div>#}
+{#        <div class="slide" style="background-image: url(./resources/images/folder.jpg);"></div>#}
+{#        <div class="leftButton">#}
+{#          <img src="./resources/images/arrow_white.png" alt="">#}
+{#        </div>#}
+{#        <div class="rightButton">#}
+{#          <img src="./resources/images/arrow_white.png" alt="">#}
+{#        </div>#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+{#</article>#}
+{#<!-- 3 -->#}
+{#<article id="item03" class="item">#}
+{#  <div class="item-content">#}
+{#    <div class="item-image">#}
+{#      <div class="carousel">#}
+{#        <div class="slide active" style="background-image: url(./resources/images/brochure.jpg);"></div>#}
+{#        <div class="slide" style="background-image: url(./resources/images/catalogue.jpg);"></div>#}
+{#        <div class="slide" style="background-image: url(./resources/images/folder.jpg);"></div>#}
+{#        <div class="leftButton">#}
+{#          <img src="./resources/images/arrow_white.png" alt="">#}
+{#        </div>#}
+{#        <div class="rightButton">#}
+{#          <img src="./resources/images/arrow_white.png" alt="">#}
+{#        </div>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="item-info mid">#}
+{#      <div>#}
+{#        <h2 class="item-info-title">Альбомы с дизайнерскими обложками</h2>#}
+{#        <p class="item-info-description">#}
+{#          Каталог можно считать идеальным решением для компаний,#}
+{#          ассортимент товаров и услуг которых постоянно пополняется.#}
+{#        </p>#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+{#</article>#}
+{#<!-- 4 -->#}
+{#<article id="item04" class="item">#}
+{#  <div class="item-content">#}
+{#    <div class="item-info mid">#}
+{#      <div>#}
+{#        <h2 class="item-info-title">Визитки</h2>#}
+{#        <p class="item-info-description">#}
+{#          Печать папок с корпоративной символикой, например, логотипом –#}
+{#          это создание и постоянное поддерживание имиджа компании на рынке услуг.#}
+{#        </p>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="item-image">#}
+{#      <div class="carousel">#}
+{#        <div class="slide active" style="background-image: url(./resources/images/brochure.jpg);"></div>#}
+{#        <div class="slide" style="background-image: url(./resources/images/catalogue.jpg);"></div>#}
+{#        <div class="slide" style="background-image: url(./resources/images/folder.jpg);"></div>#}
+{#        <div class="leftButton">#}
+{#          <img src="./resources/images/arrow_white.png" alt="">#}
+{#        </div>#}
+{#        <div class="rightButton">#}
+{#          <img src="./resources/images/arrow_white.png" alt="">#}
+{#        </div>#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+{#</article>#}
+{#<!-- 5 -->#}
+{#<article id="item05" class="item">#}
+{#  <div class="item-content">#}
+{#    <div class="item-image">#}
+{#      <div class="carousel">#}
+{#        <div class="slide active" style="background-image: url(./resources/images/brochure.jpg);"></div>#}
+{#        <div class="slide" style="background-image: url(./resources/images/catalogue.jpg);"></div>#}
+{#        <div class="slide" style="background-image: url(./resources/images/folder.jpg);"></div>#}
+{#        <div class="leftButton">#}
+{#          <img src="./resources/images/arrow_white.png" alt="">#}
+{#        </div>#}
+{#        <div class="rightButton">#}
+{#          <img src="./resources/images/arrow_white.png" alt="">#}
+{#        </div>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="item-info mid">#}
+{#      <div>#}
+{#        <h2 class="item-info-title">Открытки</h2>#}
+{#        <p class="item-info-description">#}
+{#          Каталог можно считать идеальным решением для компаний,#}
+{#          ассортимент товаров и услуг которых постоянно пополняется.#}
+{#        </p>#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+{#</article>#}
+{#<!-- 6 -->#}
+{#<article id="item06" class="item">#}
+{#  <div class="item-content">#}
+{#    <div class="item-info mid">#}
+{#      <div>#}
+{#        <h2 class="item-info-title">Пригласительные</h2>#}
+{#        <p class="item-info-description">#}
+{#          Печать папок с корпоративной символикой, например, логотипом –#}
+{#          это создание и постоянное поддерживание имиджа компании на рынке услуг.#}
+{#        </p>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="item-image">#}
+{#      <div class="carousel">#}
+{#        <div class="slide active" style="background-image: url(./resources/images/brochure.jpg);"></div>#}
+{#        <div class="slide" style="background-image: url(./resources/images/catalogue.jpg);"></div>#}
+{#        <div class="slide" style="background-image: url(./resources/images/folder.jpg);"></div>#}
+{#        <div class="leftButton">#}
+{#          <img src="./resources/images/arrow_white.png" alt="">#}
+{#        </div>#}
+{#        <div class="rightButton">#}
+{#          <img src="./resources/images/arrow_white.png" alt="">#}
+{#        </div>#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+{#</article>#}
+</section>

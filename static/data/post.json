@@ -1,0 +1,26 @@
+post = {
+  "id":4,
+  "title":"Qwe1112233www",
+  "image":"image/upload/v1539164198/k-art-site-news-photos/krpuvzwbpt4ufqitaa1n.jpg",
+  "content":"Sample text",
+  "comments":
+  [
+    {
+      "id":4,
+      "author":"Pavlo Sypyhin",
+      "email":"goldsip@gmail.com",
+      "post":"Qwe1112233www",
+      "content":"Sample text",
+      "created":"2018-10-10T12:38:22.138351+03:00",
+    },
+    {
+      "id":3,
+      "author":"Borys Lemeshko",
+      "email":"lemeshkob@gmail.com",
+      "post":"Qwe1112233www",
+      "content":"Qwe123qwe",
+      "created":"2018-10-10T12:37:57.610058+03:00",
+    }
+  ],
+  "created":"2018-10-10T12:36:37.128281+03:00",
+}

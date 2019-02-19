@@ -1,0 +1,62 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 50px;
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+}
+
+.header-logo {
+  padding-top: 9px;
+  padding-left: 12px;
+}
+.header-logo a {
+  font-family: London;
+  font-size: 40px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  letter-spacing: 8px;
+}
+
+#social {
+  position: absolute;
+  left: 0;
+  margin: 16px;
+}
+#social a {
+  text-decoration: none;
+  color: #000;
+  margin-right: 8px;
+}
+#social a:hover, #about a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+#about {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 16px;
+}
+#about a {
+  text-decoration: none;
+  color: #000;
+  margin-left: 8px;
+}
+
+@media (max-width: 991px) {
+  header {
+    text-align: left;
+  }
+  header a img {
+    margin-left: 16px;
+  }
+  #social {
+    display: none;
+  }
+}
