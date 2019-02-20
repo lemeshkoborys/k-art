@@ -1,4 +1,4 @@
-{% for category in first_section.get_categories %}
+{% for category in second_section.get_categories %}
     <h4>{{ category.title }}</h4>
     <p>{{ category.description }}</p>
     {% for image in category.get_album.get_images %}
