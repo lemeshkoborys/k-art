@@ -1,7 +1,54 @@
+<section id="tab01" class="items animate-opacity" style="display: none;">
+
 {% for category in second_section.get_categories %}
-    <h4>{{ category.title }}</h4>
-    <p>{{ category.description }}</p>
-    {% for image in category.get_album.get_images %}
-        <img src="{{ image.image.url }}" alt="{{ image }}">
-    {% endfor %}
+<article id="item1{{forloop.counter0}}" class="item">
+<div class="item-content">
+    {% if forloop.counter0|divisibleby:2 %}
+    <div class="item-info mid">
+    <div>
+        <h2 class="item-info-title">{{ category.title }}</h2>
+        <p class="item-info-description">
+        {{ category.description }}
+        </p>
+    </div>
+    </div>
+    <div class="item-image">
+    <div class="carousel">
+        {% for image in category.get_album.get_images %}
+        <div class="slide" style="background-image: url( '{{ image.image.url }}' );"></div>
+        {% endfor %}
+        <div class="leftButton">
+        <img src="./resources/images/arrow_white.png" alt="">
+        </div>
+        <div class="rightButton">
+        <img src="./resources/images/arrow_white.png" alt="">
+        </div>
+    </div>
+    </div>
+    {% else %}
+    <div class="item-image">
+    <div class="carousel">
+        {% for image in category.get_album.get_images %}
+        <div class="slide" style="background-image: url( '{{ image.image.url }}' );"></div>
+        {% endfor %}
+        <div class="leftButton">
+        <img src="./resources/images/arrow_white.png" alt="">
+        </div>
+        <div class="rightButton">
+        <img src="./resources/images/arrow_white.png" alt="">
+        </div>
+    </div>
+    </div>
+    <div class="item-info mid">
+    <div>
+        <h2 class="item-info-title">{{ category.title }}</h2>
+        <p class="item-info-description">
+        {{ category.description }}
+        </p>
+    </div>
+    </div>
+    {% endif %}
+</div>
+</article>
 {% endfor %}
+</section>
