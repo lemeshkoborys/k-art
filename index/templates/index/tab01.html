@@ -16,7 +16,7 @@
     <div class="item-image">
     <div class="carousel">
         {% for image in category.get_album.get_images %}
-        <div class="slide" style="background-image: url( '{{ image.image.url }}' );"></div>
+        <div class="slide" style="background-image: url({{ image.image.url }} );"></div>
         {% endfor %}
         <div class="leftButton">
         <img src="{% static 'images/arrow_white.png' %}" alt="white arrow">
@@ -30,7 +30,7 @@
     <div class="item-image">
     <div class="carousel">
         {% for image in category.get_album.get_images %}
-        <div class="slide" style="background-image: url( '{{ image.image.url }}' );"></div>
+        <div class="slide" style="background-image: url( {{ image.image.url }} );"></div>
         {% endfor %}
         <div class="leftButton">
         <img src="{% static 'images/arrow_white.png' %}" alt="white arrow">

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- НЕ ЗАБЫТЬ УДАЛИТЬ!!! -->
+  <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+  <title>K-art новости</title>
+  <link rel="shortcut icon" href="{% static 'images/logo_big.jpg' %}" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/my-index.css' %}">
+  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+  <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+  <link rel="stylesheet" href="{% static 'css/menu-sm.css' %}">
+  <link rel="stylesheet" href="{% static 'css/news.css' %}">
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+</head>
+<body>
+<!-- HEADER - WITH FACEBOOK, INSTAGRAM, ABOUT COMPANY AND CONTACTS -->
+<!-- ------------------------------------------------------------- -->
+  <header>
+    <div id="social">
+      <a href="https://www.facebook.com/yulianna.kart/" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/kart.adv.production/" target="_blank">Instagram</a>
+    </div>
+
+    <div class="header-logo">
+      <a href="#">K&ndash;art</a>
+    </div>
+
+    <div id="about">
+      <a href="{% url 'new-list' %}">Новости</a>
+      <a href="#">Контакты</a>
+    </div>
+  </header>
+<!-- NEWSFEED - PAGE WITH NEWS FEED -->
+<!-- ------------------------------ -->
+  <div class="news">
+      {% for post in posts %}
+    <div class="article">
+      <div class="article-image" style="background-image: url({{ post.image.url }});"></div>
+      <h2 class="article-heading">{{ post.title }}</h2>
+      <p class="article-text">{{ post.short_content }}</p>
+      <a href="{% url 'new-detail' post.id%}" class="article-link">ЧИТАТЬ ДАЛЕЕ</a>
+    </div>
+      {% endfor %}
+  </div>
+
+  <div class="pagination">
+      {% if posts.has_previous %}
+          <a href="?page=1">&laquo; first</a>
+          <a href="?page={{ posts.previous_page_number }}">previous</a>
+      {% endif %}
+      <span>
+            Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+      </span>
+      {% if posts.has_next %}
+            <a href="?page={{ posts.next_page_number }}">next</a>
+            <a href="?page={{ posts.paginator.num_pages }}">last &raquo;</a>
+      {% endif %}
+  </div>
+<!-- FOOTER WITH ADDRESS AND SOCIAL MEDIA LINKS -->
+<!-- ------------------------------------------ -->
+  <footer>
+    <div class="footer-row">
+      <div class="footer-col mid">
+        <div id="address">
+          <p>Киев, Украина</p>
+          <p>yulianka.kart@gmail.com</p>
+        </div>
+      </div>
+      <div class="footer-col mid">
+        <div id="footer-social">
+          <a href="https://www.facebook.com/yulianna.kart/" target="_blank" style="background-image: url({% static 'images/fb_logo.png' %})"></a>
+          <a href="https://www.instagram.com/kart.adv.production/" target="_blank" style="background-image: url({% static 'images/ig_logo.png' %})"></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-legalinfo">
+      <div>
+        <p>© 2018 K-art</p>
+      </div>
+      <div>
+        <p>ALL RIGHTS RESERVED</p>
+      </div>
+    </div>
+  </footer>
+  <button onclick="topFunction()" id="btnToTop" title="Go to top">
+    <img src="{% static 'images/arrow_white_top.png' %}" alt="">
+  </button>
+
+  <script src="{% static 'js/scrollToTop.js' %}"></script>
+  <script src="{% static 'js/app.js' %}"></script>
+<script>
+</script>
+</body>
+</html>
