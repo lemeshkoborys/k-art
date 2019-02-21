@@ -4,6 +4,7 @@ function scrollToItem(tab, item) {
   for (i = 0; i < x.length; i++) {
       x[i].style.display = "none"; 
   }
+  console.log(tab, item);
   document.getElementById(tab).style.display = "block";
   
   var rect = document.getElementById(item).getBoundingClientRect();
@@ -53,5 +54,5 @@ function openScrollToItem(tab, item) {
   localStorage.setItem('redirected', true);
   localStorage.setItem('tab', tab);
   localStorage.setItem('item', item);
-  location.href='index.html';
+  location.href='/';
 }

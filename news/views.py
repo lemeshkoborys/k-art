@@ -29,4 +29,19 @@ def render_news(request):
 
 def render_new_detail(request, pk):
     post = get_object_or_404(Post, id=pk)
-    return render(request, 'news/new-detail.html', {'post': post})
+    post_text = post.description.split("\n\r")
+
+    first_section = Section.objects.get(order=1)
+    second_section = Section.objects.get(order=2)
+    third_section = Section.objects.get(order=3)
+    fourth_section = Section.objects.get(order=4)
+
+    context = {
+        'first_section': first_section,
+        'second_section': second_section,
+        'third_section': third_section,
+        'fourth_section': fourth_section,
+        'post': post,
+        'article_text': post_text
+    }
+    return render(request, 'news/new-detail.html', context)

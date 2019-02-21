@@ -21,6 +21,11 @@ class Post(models.Model):
         verbose_name='Изображение'
     )
 
+    created = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name='Дата добавления'
+    )
+
     def __str__(self):
         return self.title
 

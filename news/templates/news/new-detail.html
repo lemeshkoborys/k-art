@@ -1,10 +1,206 @@
 <!DOCTYPE html>
-<html lang="en">
+{% load static %}
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- НЕ ЗАБЫТЬ УДАЛИТЬ!!! -->
+  <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+  <title>K-art новости</title>
+  <link rel="shortcut icon" href="{% static 'images/logo_big.jpg' %}" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/my-index.css' %}">
+  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+  <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+  <link rel="stylesheet" href="{% static 'css/menu-sm.css' %}">
+  <link rel="stylesheet" href="{% static 'css/article.css' %}">
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
 </head>
 <body>
+<!-- HEADER - WITH FACEBOOK, INSTAGRAM, ABOUT COMPANY AND CONTACTS -->
+<!-- ------------------------------------------------------------- -->
+  <header>
+    <div id="social">
+      <a href="https://www.facebook.com/yulianna.kart/" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/kart.adv.production/" target="_blank">Instagram</a>
+    </div>
 
+    <div class="header-logo">
+      <a href="#">K&ndash;art</a>
+    </div>
+
+    <div id="about">
+      <a href="{% url 'new-list' %}">Новости</a>
+      <a href="#">Контакты</a>
+    </div>
+  </header>
+
+<!-- NAVIGATION WITH EXPANDABLE TABS AND ANIMATION ON HOVER -->
+<!-- ------------------------------------------------------ -->
+  <nav class="nav-main">
+    <div class="menu-item">
+      <div class="menu-item-title-div mid">
+        <div>
+          <p class="menu-item-title">{{ first_section.title }}</p>
+        </div>
+      </div>
+      <div class="menu-item-text expandable">
+        {% for category in first_section.get_categories %}
+          <p onclick="scrollToItem('tab00', 'item0{{forloop.counter0}}')">
+            {{ category.title }}
+          </p>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-title-div mid">
+        <div>
+          <p class="menu-item-title">{{ second_section.title }}</p>
+        </div>
+      </div>
+      <div class="menu-item-text expandable">
+        {% for category in second_section.get_categories %}
+          <p onclick="scrollToItem('tab01', 'item1{{forloop.counter0}}')">
+            {{ category.title }}
+          </p>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-title-div mid">
+        <div>
+          <p class="menu-item-title">{{ third_section.title }}</p>
+        </div>
+      </div>
+      <div class="menu-item-text expandable">
+        {% for category in third_section.get_categories %}
+          <p onclick="scrollToItem('tab02', 'item2{{forloop.counter0}}')">
+            {{ category.title }}
+          </p>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-title-div mid">
+        <div>
+          <p class="menu-item-title">{{ fourth_section.title }}</p>
+        </div>
+      </div>
+      <div class="menu-item-text expandable">
+        {% for category in fourth_section.get_categories %}
+          <p onclick="scrollToItem('tab03', 'item3{{forloop.counter0}}')">
+            {{ category.title }}
+          </p>
+        {% endfor %}
+      </div>
+    </div>
+  </nav>
+
+<!-- NAVIGATION FOR SMALL DEVICES WITH EXPANDABLE TABS AND ANIMATION ON HOVER -->
+<!-- ------------------------------------------------------------------------ -->
+  <div class="menu-sm">
+    <div class="menu-sm-header" onclick="toggleMenu()">
+      <img class="menu-sm-arrow" src="{% static 'images/arrow_white.png' %}" alt="menu arrow">
+      <h4>Наши услуги</h4>
+    </div>
+    <div class="menu-sm-body expandable-sm">
+      <div class="menu-sm-item mid">
+        <div>
+          <p class="menu-sm-item-title" onclick="expandChild(0)">{{ first_section.title }}</p>
+          <div class="menu-sm-item-text expandable-sm">
+            {% for category in first_section.get_categories %}
+              <p onclick="scrollToItem('tab00', 'item0{{forloop.counter0}}')">
+                {{ category.title }}
+              </p>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="menu-sm-item mid">
+        <div>
+          <p class="menu-sm-item-title" onclick="expandChild(1)">{{ second_section.title }}</p>
+          <div class="menu-sm-item-text expandable-sm">
+            {% for category in second_section.get_categories %}
+              <p onclick="scrollToItem('tab01', 'item1{{forloop.counter0}}')">
+                {{ category.title }}
+              </p>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="menu-sm-item mid">
+        <div>
+          <p class="menu-sm-item-title" onclick="expandChild(2)">{{ third_section.title }}</p>
+          <div class="menu-sm-item-text expandable-sm">
+            {% for category in third_section.get_categories %}
+              <p onclick="scrollToItem('tab02', 'item2{{forloop.counter0}}')">
+                {{ category.title }}
+              </p>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="menu-sm-item mid">
+        <div>
+          <p class="menu-sm-item-title" onclick="expandChild(3)">{{ fourth_section.title }}</p>
+          <div class="menu-sm-item-text expandable-sm">
+            {% for category in fourth_section.get_categories %}
+              <p onclick="scrollToItem('tab03', 'item3{{forloop.counter0}}')">
+                {{ category.title }}
+              </p>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- ARTICLE - A DIV WITH PHOTO AND TEXT -->
+<!-- ----------------------------------- -->
+  <div class="article">
+    <div class="article-image" style="background-image: url({{ post.image.url }})">
+
+    </div>
+    <div class="article-text">
+      <h2>{{ post.title }}</h2>
+      <p class="article-timestamp">{{ post.created }}</p>
+      {% for item in article_text %}
+          <p>{{ item }}</p>
+      {% endfor %}
+    </div>
+  </div>
+<!-- FOOTER WITH ADDRESS AND SOCIAL MEDIA LINKS -->
+<!-- ------------------------------------------ -->
+  <footer>
+    <div class="footer-row">
+      <div class="footer-col mid">
+        <div id="address">
+          <p>Киев, Украина</p>
+          <p>yulianka.kart@gmail.com</p>
+        </div>
+      </div>
+      <div class="footer-col mid">
+        <div id="footer-social">
+          <a href="https://www.facebook.com/yulianna.kart/" target="_blank" style="background-image: url({% static 'images/fb_logo.png' %})"></a>
+          <a href="https://www.instagram.com/kart.adv.production/" target="_blank" style="background-image: url({% static 'images/ig_logo.png' %})"></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-legalinfo">
+      <div>
+        <p>© 2018 K-art</p>
+      </div>
+      <div>
+        <p>ALL RIGHTS RESERVED</p>
+      </div>
+    </div>
+  </footer>
+  <button onclick="topFunction()" id="btnToTop" title="Go to top">
+    <img src="{% static 'images/arrow_white_top.png' %}" alt="">
+  </button>
+
+  <script src="{% static 'js/scrollToTop.js' %}"></script>
+  <script src="{% static 'js/app.js' %}"></script>
+<script>
+</script>
 </body>
 </html>
