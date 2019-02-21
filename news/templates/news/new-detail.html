@@ -46,7 +46,7 @@
       </div>
       <div class="menu-item-text expandable">
         {% for category in first_section.get_categories %}
-          <p onclick="scrollToItem('tab00', 'item0{{forloop.counter0}}')">
+          <p onclick="openScrollToItem('tab00', 'item0{{forloop.counter0}}')">
             {{ category.title }}
           </p>
         {% endfor %}
@@ -60,7 +60,7 @@
       </div>
       <div class="menu-item-text expandable">
         {% for category in second_section.get_categories %}
-          <p onclick="scrollToItem('tab01', 'item1{{forloop.counter0}}')">
+          <p onclick="openScrollToItem('tab01', 'item1{{forloop.counter0}}')">
             {{ category.title }}
           </p>
         {% endfor %}
@@ -74,7 +74,7 @@
       </div>
       <div class="menu-item-text expandable">
         {% for category in third_section.get_categories %}
-          <p onclick="scrollToItem('tab02', 'item2{{forloop.counter0}}')">
+          <p onclick="openScrollToItem('tab02', 'item2{{forloop.counter0}}')">
             {{ category.title }}
           </p>
         {% endfor %}
@@ -88,7 +88,7 @@
       </div>
       <div class="menu-item-text expandable">
         {% for category in fourth_section.get_categories %}
-          <p onclick="scrollToItem('tab03', 'item3{{forloop.counter0}}')">
+          <p onclick="openScrollToItem('tab03', 'item3{{forloop.counter0}}')">
             {{ category.title }}
           </p>
         {% endfor %}
