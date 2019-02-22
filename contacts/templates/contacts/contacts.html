@@ -6,15 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- НЕ ЗАБЫТЬ УДАЛИТЬ!!! -->
   <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-  <title>K-art новости</title>
+  <title>K-art обратная связь</title>
   <link rel="shortcut icon" href="{% static 'images/logo_big.jpg' %}" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{% static 'css/my-index.css' %}">
   <link rel="stylesheet" href="{% static 'css/header.css' %}">
   <link rel="stylesheet" href="{% static 'css/menu.css' %}">
   <link rel="stylesheet" href="{% static 'css/menu-sm.css' %}">
-  <link rel="stylesheet" href="{% static 'css/article.css' %}">
+  <link rel="stylesheet" href="{% static 'css/about.css' %}">
+  <link rel="stylesheet" href="{% static 'css/feedback.css' %}">
   <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 <!-- HEADER - WITH FACEBOOK, INSTAGRAM, ABOUT COMPANY AND CONTACTS -->
@@ -154,20 +156,55 @@
       </div>
     </div>
   </div>
-<!-- ARTICLE - A DIV WITH PHOTO AND TEXT -->
-<!-- ----------------------------------- -->
-  <div class="article">
-    <div class="article-image" style="background-image: url({{ post.image.url }})">
 
+<section class="about">
+    <div class="about-content">
+      <div class="contacts mid">
+        <div>
+          <h3 class="contact">Контакты</h3>
+          <p class="contact">K-art</p>
+          <p class="contact">Kyiv, Ukraine</p>
+          <a class="contact" href="mailto:k@art.com">k@art.com</a>
+          <a class="contact" href="tel:+380441231212">+38(044)123-12-12</a>
+        </div>
+      </div>
+      <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d325515.68165192875!2d30.252503877561143!3d50.40213675047685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf4ee15a4505%3A0x764931d2170146fe!2z0JrQuNC10LIsIDAyMDAw!5e0!3m2!1sru!2sua!4v1536270053527" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
     </div>
-    <div class="article-text">
-      <h2>{{ post.title }}</h2>
-      <p class="article-timestamp">{{ post.created }}</p>
-      {% for item in article_text %}
-          <p>{{ item }}</p>
-      {% endfor %}
-    </div>
-  </div>
+  </section>
+
+<!-- FEEDBACK FORM - FORM TO SEND FEEDBACK -->
+<!-- ------------------------------------- -->
+  <section class="feedback-form">
+    <h2>Обратная связь</h2>
+    <form action="{% url 'feedback' %}" method="post">
+    {% csrf_token %}
+      <label for="email">E-mail</label>
+      <input type="email" name="email" id="email" placeholder="k@art.com">
+
+      <label for="aname">Имя</label>
+      <input type="text" id="aname" name="name" placeholder="Ваше имя..">
+
+      <label for="phone">Номер телефона</label>
+      <input type="text" name="cccc" id="phone" placeholder="+38(044)123-12-12">
+
+      <label for="category">Категория</label>
+      <select id="category" name="category">
+          {% for category in categories %}
+        <option value="{{ category.id }}">{{ category.title }}</option>
+          {% endfor %}
+      </select>
+
+      <label for="comm">Комментарий</label>
+      <textarea id="comm" name="content" cols="40" rows="5" placeholder="Ваш комментарий.."></textarea>
+
+
+      <div class="g-recaptcha" data-sitekey="6LeZQpMUAAAAAHsFzPxfiyh_I04R1HabN_ZT8ebQ"></div>
+
+      <input type="submit" value="Отправить сообщение">
+    </form>
+  </section>
 <!-- FOOTER WITH ADDRESS AND SOCIAL MEDIA LINKS -->
 <!-- ------------------------------------------ -->
   <footer>

@@ -1,7 +1,7 @@
 {% load static %}
 <section id="tab03" class="items animate-opacity" style="display: none;">
 
-{% for category in fourth_section.get_categories %}
+{% for category in fourth_section.get_categories|dictsort:"id" %}
 <article id="item3{{forloop.counter0}}" class="item">
 <div class="item-content">
     {% if forloop.counter0|divisibleby:2 %}
