@@ -47,6 +47,8 @@ class Category(models.Model):
         verbose_name='Секция к которой относится данная категория'
     )
 
+    created_at = models.DateTimeField(auto_now_add=True)
+
     def __str__(self):
         return self.title
 
@@ -77,7 +79,7 @@ class Section(models.Model):
     )
 
     def get_categories(self):
-        return Category.objects.filter(section=self)
+        return Category.objects.filter(section=self).order_by('created_at')
 
     def __str__(self):
         return self.title
