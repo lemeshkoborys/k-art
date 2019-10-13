@@ -2,7 +2,7 @@
 <section id="tab00" class="items animate-opacity">
 
 {% for category in first_section.get_categories|dictsort:"id" %}
-<article id="item0{{forloop.counter0}}" class="item">
+<article id="item0{{forloop.counter}}" class="item">
   <div class="item-content">
     {% if forloop.counter0|divisibleby:2 %}
     <div class="item-info mid">

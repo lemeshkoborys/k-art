@@ -1,7 +1,7 @@
-.tile:nth-child(1)::before {background-image: url('../images/fwd/digital_2.jpg')}
-.tile:nth-child(2)::before {background-image: url('../images/fwd/wide_1.jpg')}
-.tile:nth-child(3)::before {background-image: url('../images/fwd/outer_4.jpg')}
-.tile:nth-child(4)::before {background-image: url('../images/fwd/inter_1.jpg')}
+.tile:nth-child(1)::before {background-image: url('../images/fwd/inter_1.jpg')}
+.tile:nth-child(2)::before {background-image: url('../images/fwd/outer_4.jpg')}
+.tile:nth-child(3)::before {background-image: url('../images/fwd/wide_1.jpg')}
+.tile:nth-child(4)::before {background-image: url('../images/fwd/digital_2.jpg')}
 
 html, body, .story-outer, .story {
   height: 100%;
