@@ -1,7 +1,71 @@
+.tile-sm:nth-child(1)::before {background-image: url('../images/fwd/inter_1.jpg')}
+.tile-sm:nth-child(2)::before {background-image: url('../images/fwd/outer_4.jpg')}
+.tile-sm:nth-child(3)::before {background-image: url('../images/fwd/wide_1.jpg')}
+.tile-sm:nth-child(4)::before {background-image: url('../images/fwd/digital_2.jpg')}
+
 .story-sm {
   font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
   background: #fafafa;
   padding-bottom: 20px;
+}
+
+.story-sm-tiles {
+  position: relative;
+  padding-bottom: 100%;
+}
+.story-sm-tiles > div {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.tile-sm {
+  position: relative;
+  width: 100%;
+  height: 25%;
+  float: left;
+}
+.tile-sm::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.tile-card-sm {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+.tile-front-sm {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  /* background-color: rgb(255, 255, 255, 0.5); */
+  /* background-color: rgba(226,166,18,.7); */
+  opacity: 1;
+  transition-delay: 0.2s;
+  transition: all 0.4s ease;
+}
+.tile-front-sm > h4 {
+  width: 100%;
+  font-size: 14px;
+  color: #252525;
+  margin: 0;
+  padding: 0 20px;
+  text-align: center;
+  font-weight: 500;
+}
+.tile-front-sm > h4 > span {
+  background-color: rgb(255, 255, 255, 1);
+  padding: 0 4px;
 }
 
 .story-sm-our, .story-sm-slogan, .story-sm-text {
