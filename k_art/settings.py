@@ -25,7 +25,7 @@ SECRET_KEY = '!rn%773q%m-((4djqr31q$lc2*6bnl7fe&t+gq4xdy6u3-695b'
 GOOGLE_CAPTCHA_SECRET_KEY = '6LeZQpMUAAAAAII8KA1kpaowT8rpxUbftM5kIl33'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 

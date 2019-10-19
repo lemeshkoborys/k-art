@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponseServerError
 from .models import Section, Category
 
 
@@ -17,3 +18,4 @@ def render_index(request):
         'fourth_section': fourth_section
     }
     return render(request, 'index/index.html', context)
+

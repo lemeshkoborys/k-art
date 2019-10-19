@@ -1,0 +1,25 @@
+{%load static%}<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+  <title>404 | страница не найдена</title>
+  <link rel="shortcut icon" href="{%static 'images/logo_big.jpg'%}" type="image/x-icon">
+  <link rel="stylesheet" href="{%static 'css/error.css'%}">
+</head>
+<body>
+  <div class="error-wrapper">
+    <div class="error">
+      <div class="logo" style="background-image: url({%static 'images/logo_big.jpg'%});">
+        <a href="{%url 'index'%}"></a>
+      </div>
+      <div class="error-message">
+        <div class="error-code">404</div>
+        <div>Возможно, введён некоректный адрес или страница была удалена.</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
